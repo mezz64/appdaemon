@@ -67,7 +67,7 @@ function baserss(widget_id, url, skin, parameters)
     function show_next_story(self)
     {
         var stories = self.entity_state[parameters.entity].feed.entries;
-        self.set_field(self, "text", stories[self.story].title)
+        self.set_field(self, "text", stories[self.story].title + ' - ' + stories[self.story].summary)
         self.story = self.story + 1;
         if ((self.story >= stories.length) || ("recent" in parameters && self.story >= parameters.recent))
         {
